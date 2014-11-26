@@ -9,6 +9,7 @@ pkg/
 tmp
 *.sw*
 spec/dummy
+test/dummy
 *.rbc
 *.tmproj
 Gemfile.lock
