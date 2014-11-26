@@ -1,0 +1,1 @@
+IoAsk.user_class = "<%= user_class %>"
