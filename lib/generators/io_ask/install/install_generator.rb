@@ -8,6 +8,7 @@ module IoAsk
   module Generators
     class InstallGenerator < Rails::Generators::Base
       class_option "user-class", :type => :string
+      class_option "category-class", :type => :string
       class_option "no-migrate", :type => :boolean
       class_option "current-user-helper", :type => :string
 
@@ -15,7 +16,7 @@ module IoAsk
       desc "Used to install IoAsk"
 
       def install_migrations
-        puts "Copying over IoAsk migrations..."
+        puts "Copying over io_ask migrations..."
         Dir.chdir(Rails.root) do
           `rake io_ask:install:migrations`
         end
@@ -26,6 +27,14 @@ module IoAsk
                       ask("What is your user class called? [User]").presence ||
                       'User'
       end
+
+
+      def determine_category_class
+        @category_class = options["category-class"].presence ||
+                      ask("What is your category class called? [Category]").presence ||
+                      'Category'
+      end
+
 
       def determine_current_user_helper
         current_user_helper = options["current-user-helper"].presence ||
