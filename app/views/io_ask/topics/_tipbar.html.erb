@@ -1,0 +1,10 @@
+<a class="label label-info" href="/ask?cid=<%= topic.category.id %>"><%= topic.category.name %></a> •
+<a href="/users/<%= topic.user.username %>"><strong><%= topic.user.username %></strong></a> •
+
+    
+<%= time_ago_in_words(topic.created_at) %>前创建
+
+<% if topic.comment_count > 0 %>
+• <%= topic.comment_count %> 回复 
+• 最后由 <a href="/users/<%= topic.last_comment_user.username %>"><%= topic.last_comment_user.username %></a> 在 <%= time_ago_in_words(topic.last_commented_at) %>前回复
+<% end %>

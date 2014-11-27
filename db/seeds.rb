@@ -1,2 +1,2 @@
-IoAsk::Topic.create(:subject => 'test title1')
-IoAsk::Topic.create(:subject => 'test title2')
+IoAsk::Topic.create(:title => 'test title1')
+IoAsk::Topic.create(:title => 'test title2')

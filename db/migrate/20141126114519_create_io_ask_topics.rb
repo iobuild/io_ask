@@ -4,7 +4,7 @@ class CreateIoAskTopics < ActiveRecord::Migration
       t.integer :topic_id
       t.integer :user_id
       t.integer :category_id
-      t.string :subject
+      t.string :title
       t.text :content
 
       t.timestamps

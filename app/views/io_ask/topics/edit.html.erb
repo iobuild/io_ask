@@ -1,0 +1,69 @@
+
+<div class="row">
+
+    <div class="col-md-8">
+
+        <%= render 'topics/breadcrumb', :category => nil, :topic => @topic %>
+
+        <div class="panel panel-default">
+
+            <div class="panel-heading">
+              <strong>编辑话题</strong>
+              / 
+              <a href="/ask/<%= @topic.id %>">取消编辑</a>
+
+            </div>
+
+            <div class="panel-body">
+
+                <div class="col-md-12">
+
+                  <%= simple_form_for @topic, :url => "/ask/#{@topic.id}", :html => {:class => 'form-horizontal'} do |f| %>
+
+                    <div class="form-group">
+                      <%= f.input :category_id, :label => false, :required => true, :collection => @ask_categories, :include_blank => true, prompt: "请选择分类" %>
+                    </div>
+
+                    
+                    <div class="form-group">
+                      <%= f.input :title, :label => false, :placeholder => '请填写标题', input_html: {:class => 'form-control'}, :required => true %>
+                    </div>
+
+
+                    <div class="form-group">
+                      <%= f.input :content, as: :ckeditor, :label => false, :input_html => { :ckeditor => { :height =>500,  :toolbar => 'mini' } } %>
+                    </div>
+
+                    
+                    <div class="form-group">
+                      <%= f.submit "保存", :class => "btn btn-primary" %>
+                    </div>
+                  <% end %>
+
+
+ 
+                </div>
+
+
+
+
+            </div>
+
+
+
+        </div>
+
+        
+
+    </div>
+
+
+
+    <%= render "ask/sidebar" %>
+
+
+
+</div>
+<!-- /.row -->
+
+
