@@ -12,24 +12,24 @@
                 <% if @category.nil? %>
                 <ul class="nav nav-tabs" role="tablist">
                     <li <% if params[:latest] == 'topic' || params[:latest].nil? %>class="active"<% end %>>
-                      <a href="/ask?lastest=topic">最新话题</a>
+                      <a href="/ask/topics?lastest=topic">最新话题</a>
                     </li>
                     <li <% if params[:latest] == 'comment' %>class="active"<% end %>>
-                    <a href="/ask?latest=comment">最新回复</a>
+                    <a href="/ask/topics?latest=comment">最新回复</a>
                     </li>
                 </ul>
                 <% else %>
                 <p>
-                  <a href="/ask">返回所有列表</a> / 
+                  <a href="/ask/topics">返回所有列表</a> / 
                   <strong><%= @category.name %></strong> 当前共有 <%= @topics.count %> 主题
                 </p>
 
                 <ul class="nav nav-tabs" role="tablist">
                     <li <% if params[:latest] == 'topic' || params[:latest].nil? %>class="active"<% end %>>
-                      <a href="/ask?cid=<%= @category.id %>&lastest=topic">最新主题</a>
+                      <a href="/ask/topics?cid=<%= @category.id %>&lastest=topic">最新主题</a>
                     </li>
                     <li <% if params[:latest] == 'comment' %>class="active"<% end %>>
-                    <a href="/ask?cid=<%= @category.id %>&latest=comment">最新回复</a>
+                    <a href="/ask/topics?cid=<%= @category.id %>&latest=comment">最新回复</a>
                     </li>
                 </ul>
                 <% end %>
@@ -41,11 +41,11 @@
                     
                     <% @topics.each do |topic| %>
                     <dd>
-                      <a href="/users/<%= topic.user.ioask_name %>" class="pull-left mr-10 thumb-size">
-                        <%= ioask_avatar(topic.user, :size => 48) %>
-                      </a>
+                        <a href="/users/<%= topic.user.ioask_name %>" class="pull-left mr-10 thumb-size">
+                          <%= ioask_avatar(topic.user, :size => 48) %>
+                        </a>
                         
-                            <a class="badge pull-right" href=""><%= topic.comment_count %></a>
+                        <a class="badge pull-right" href=""><%= topic.comment_count %></a>
                         
                         <a href="/ask/topics/<%= topic.id %>" class="title" title="<%= topic.title %>"><%= topic.title %></a>
                         <div class="space"></div>

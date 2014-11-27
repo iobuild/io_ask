@@ -16,7 +16,7 @@
           </div>
           <div class="panel-body">
             <% @ask_categories.each do |c| %>
-              <a href="/ask?cid=<%= c.id %>" class="btn"><%= c.name %></a>
+              <a href="/ask/topics?cid=<%= c.id %>" class="btn"><%= c.name %></a>
             <% end %>
           </div>
       </div>
