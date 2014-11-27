@@ -3,7 +3,7 @@
 
             <div class="col-md-8">
 
-                <%= render 'topic/breadcrumb', :category => nil, :topic => @topic %>
+                <%= render 'io_ask/topics/breadcrumb', :category => nil, :topic => @topic %>
                 
 
                 <div class="content">
@@ -16,7 +16,7 @@
                                 
                                 <dd>
                                   <a href="/users/<%= @topic.user.ioask_name %>" class="pull-left mr-10 thumb-size">
-                                    <img class="img-rounded" src="<%= @topic.user.avatar.url(:thumb) %>" alt="<%= @topic.user.ioask_name %>">
+                                    <%= ioask_avatar(@topic.user, :size => 48) %>
                                   </a>
                                     
                                     
@@ -28,7 +28,7 @@
                                         <span class="label label-default pull-right"><a href="/ask/<%= @topic.id %>/edit" title="编辑"><i class="fa fa-edit"></i></a> </span>
                                         <% end %>
 
-                                        <%= render 'ask/tipbar', :topic => @topic %>
+                                        <%= render 'io_ask/topics/tipbar', :topic => @topic %>
                                     </div>
                                     <div class="clear"></div>
                                 </dd>
@@ -92,7 +92,7 @@
                             <%= simple_form_for @topic.comments.build, :url => "/ask/#{@topic.id}/comments" do |f| %>
 
                                 <div class="form-group">
-                                    <%= f.input :content, :required => true, as: :ckeditor, :label => false, :input_html => { :ckeditor => { :height =>350,  :toolbar => 'mini' } } %>
+                                    <%= f.input :content, :required => true, as: :text, :label => false %>
                                 </div>
                 
                                 
@@ -127,7 +127,7 @@
             </div>
 
 
-            <%= render "ask/sidebar" %>
+            <%= render "io_ask/topics/sidebar" %>
 
         </div>
         <!-- /.row -->
