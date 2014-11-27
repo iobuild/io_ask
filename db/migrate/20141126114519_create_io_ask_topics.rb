@@ -8,6 +8,7 @@ class CreateIoAskTopics < ActiveRecord::Migration
       t.string :title
       t.text :content
       t.datetime :last_commented_at
+      t.integer :comment_count, :default => 0
 
       t.timestamps
     end
