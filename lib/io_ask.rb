@@ -5,7 +5,7 @@ require "io_ask/engine"
 
 module IoAsk
 
-  mattr_accessor :user_class, :category_class, :layout
+  mattr_accessor :user_class, :category_class, :layout, :avatar_user_method
 
 
   class << self

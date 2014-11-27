@@ -42,7 +42,7 @@
                     <% @topics.each do |topic| %>
                     <dd>
                       <a href="/users/<%= topic.user.ioask_name %>" class="pull-left mr-10 thumb-size">
-                        <img class="img-rounded" src="<%= topic.user.avatar.url(:thumb) %>" alt="<%= topic.user.ioask_name %>">
+                        <%= ioask_avatar(topic.user, :size => 48) %>
                       </a>
                         
                             <a class="badge pull-right" href=""><%= topic.comment_count %></a>
