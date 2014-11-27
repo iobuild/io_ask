@@ -34,7 +34,7 @@ module IoAsk
 
 
     def layout
-      @@layout || "forem/default"
+      @@layout || "io_ask/application"
     end
 
 

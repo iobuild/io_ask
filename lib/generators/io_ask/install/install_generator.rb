@@ -59,13 +59,17 @@ module IoAsk
 
       def add_io_ask_initializer
         path = "#{Rails.root}/config/initializers/io_ask.rb"
-        if File.exists?(path)
-          puts "Skipping config/initializers/io_ask.rb creation, as file already exists!"
-        else
-          puts "Adding io_ask initializer (config/initializers/io_ask.rb)..."
-          template "initializer.rb", path
-          require path # Load the configuration per issue #415
-        end
+        # if File.exists?(path)
+        #   puts "Skipping config/initializers/io_ask.rb creation, as file already exists!"
+        # else
+        #   puts "Adding io_ask initializer (config/initializers/io_ask.rb)..."
+        #   template "initializer.rb", path
+        #   require path
+        # end
+
+        puts "Adding io_ask initializer (config/initializers/io_ask.rb)..."
+        template "initializer.rb", path
+        require path
       end
 
       def run_migrations
@@ -99,8 +103,11 @@ module IoAsk
       end
 
       def create_assets
-        create_file Rails.root + "vendor/assets/stylesheets/IoAsk.css.scss"
-        create_file Rails.root + "vendor/assets/javascripts/IoAsk.js.coffee" do
+        create_file Rails.root + "vendor/assets/stylesheets/io_ask.css.scss" do
+          %Q{
+          }
+        end
+        create_file Rails.root + "vendor/assets/javascripts/io_ask.js.coffee" do
           %Q{
 #= require jquery
           }

@@ -1,4 +1,6 @@
-source "https://rubygems.org"
+# source "https://rubygems.org"
+source "http://ruby.taobao.org"
+
 
 # Declare your gem's dependencies in io_ask.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
