@@ -1,4 +1,7 @@
+require 'active_support/core_ext/kernel/singleton_class'
+
 require "io_ask/engine"
+
 
 module IoAsk
 
@@ -6,6 +9,26 @@ module IoAsk
 
 
   class << self
+
+
+    def decorate_user_class!
+      IoAsk.user_class.class_eval do
+
+        has_many :topics, :class_name => "IoAsk::Topic", :foreign_key => "user_id"
+   
+        
+        # Using +to_s+ by default for backwards compatibility
+        def ioask_name
+          to_s
+        end unless method_defined? :ioask_name
+
+        # Using +email+ by default for backwards compatibility. This attribute
+        # it's optional
+        def ioask_email
+          try :email
+        end unless method_defined? :ioask_email
+      end
+    end
 
     def user_class
       if @@user_class.is_a?(Class)

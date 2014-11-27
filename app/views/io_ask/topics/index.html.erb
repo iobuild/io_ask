@@ -41,16 +41,16 @@
                     
                     <% @topics.each do |topic| %>
                     <dd>
-                      <a href="/users/<%= topic.user.username %>" class="pull-left mr-10 thumb-size">
-                        <img class="img-rounded" src="<%= topic.user.avatar.url(:thumb) %>" alt="<%= topic.user.username %>">
+                      <a href="/users/<%= topic.user.ioask_name %>" class="pull-left mr-10 thumb-size">
+                        <img class="img-rounded" src="<%= topic.user.avatar.url(:thumb) %>" alt="<%= topic.user.ioask_name %>">
                       </a>
                         
                             <a class="badge pull-right" href=""><%= topic.comment_count %></a>
                         
-                        <a href="/ask/<%= topic.id %>" class="title" title="<%= topic.title %>"><%= topic.title %></a>
+                        <a href="/ask/topics/<%= topic.id %>" class="title" title="<%= topic.title %>"><%= topic.title %></a>
                         <div class="space"></div>
                         <div class="info">
-                            <%= render 'ask/tipbar', :topic => topic %>
+                            <%= render 'io_ask/topics/tipbar', :topic => topic %>
                         </div>
                         <div class="clear"></div>
                     </dd>

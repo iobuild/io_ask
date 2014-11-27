@@ -7,7 +7,7 @@ module IoAsk
                :class_name => IoAsk.category_class.to_s, :foreign_key => :category_id
 
     belongs_to :last_comment_user, 
-               :class_name => IoAsk.category_class.to_s, :foreign_key => 'last_comment_user_id'
+               :class_name => IoAsk.user_class.to_s, :foreign_key => 'last_comment_user_id'
 
 
 
