@@ -21,3 +21,4 @@ end
 require 'decorators'
 require 'bootstrap-sass'
 require 'simple_form'
+require 'font-awesome-sass'

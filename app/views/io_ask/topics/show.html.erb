@@ -69,7 +69,7 @@
                                         <%= time_ago_in_words(c.created_at) %>前
                                     </div>
                                     <div class="space"></div>
-                                    <div class="reply-content"><p><%= raw c.content %></p></div>
+                                    <div class="reply-content"><p><%= simple_format c.content %></p></div>
                                     <div class="clear"></div>
                                 </dd>
                                 <% end %>
