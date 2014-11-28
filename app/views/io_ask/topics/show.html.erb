@@ -59,7 +59,7 @@
                                   @comments.each do |c|
                                 %>
                                 <dd id="comment-<%= c.id %>">
-                                    <a href="/users/<%= c.user.ioask_name %>" class="pull-left mr-10 thumb-size"><img class="img-rounded" src="<%= c.user.avatar.url(:thumb) %>" alt="<%= c.user.ioask_name %>"></a>
+                                    <a href="/users/<%= c.user.ioask_name %>" class="pull-left mr-10 thumb-size"><%= ioask_avatar(c.user, :size => 48) %></a>
                                     <div class="info">
                                         <% if c.user == current_user %>
                                         <span class="label label-default pull-right"><a href="/comments/<%= c.id %>/edit" title="编辑"><i class="fa fa-edit"></i></a> </span>
@@ -89,7 +89,7 @@
 
 
                             
-                            <%= simple_form_for @topic.comments.build, :url => "/ask/#{@topic.id}/comments" do |f| %>
+                            <%= simple_form_for @topic.comments.build, :url => "/ask/topics/#{@topic.id}/comments" do |f| %>
 
                                 <div class="form-group">
                                     <%= f.input :content, :required => true, as: :text, :label => false %>
