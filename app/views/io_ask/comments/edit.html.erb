@@ -1,0 +1,53 @@
+
+<div class="container">
+
+    <div class="col-md-8">
+
+        <%= render 'io_ask/topics/breadcrumb', :category => nil, :topic => @comment.topic %>
+
+        <div class="panel panel-default">
+
+            <div class="panel-heading"><strong>编辑评论</strong></div>
+
+            <div class="panel-body">
+
+                <div class="col-md-12">
+
+                  <%= simple_form_for @comment, :url => "/ask/comments/#{@comment.id}" do |f| %>
+
+                    <div class="form-group">
+                      <%= f.input :content, :required => true, as: :text, :placeholder => '请填写内容', :label => false, input_html: {:class => 'form-control'} %>
+                    </div>
+    
+
+                    <div class="form-group">
+                      <span class="pull-left"><%= f.submit "保存评论", :class => "btn btn-primary" %></span>
+                      <span class="pull-right">
+                        <%= link_to '删除评论', "/ask/comments/#{@comment.id}", :class => "btn btn-primary",  :method => :delete, :data => { confirm: '确定删除?' } %>
+                      </span>
+                    </div>
+
+                  <% end %>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+        
+
+    </div>
+
+
+
+    <%= render "io_ask/topics/sidebar" %>
+
+
+
+</div>
+<!-- /.row -->
+
+  

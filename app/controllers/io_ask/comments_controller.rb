@@ -7,6 +7,8 @@ module IoAsk
     def pre_load
       @topic = IoAsk::Topic.find(params[:topic_id]) if params[:topic_id]
       @comment = IoAsk::Comment.find(params[:id]) if params[:id]
+
+      @ask_categories = IoAsk::Category.for_ask
     end
 
     def comment_params
@@ -32,7 +34,7 @@ module IoAsk
     end
 
     def update
-      return redirect_to "/ask/topics/#{@comment.commentable.id}" if @comment.update_attributes(comment_params)
+      return redirect_to "/ask/topics/#{@comment.topic.id}" if @comment.update_attributes(comment_params)
 
       render 'edit'
 
@@ -40,7 +42,7 @@ module IoAsk
 
 
     def destroy
-      return redirect_to "/ask/topics/#{@comment.commentable.id}" if @comment.destroy
+      return redirect_to "/ask/topics/#{@comment.topic.id}" if @comment.destroy
     end
 
   end

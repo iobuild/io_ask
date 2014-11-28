@@ -20,12 +20,12 @@
                                   </a>
                                     
                                     
-                                    <a href="/ask/<%= @topic.id %>" class="title" title="<%= @topic.title %>"><%= @topic.title %></a>
+                                    <a href="/ask/topics/<%= @topic.id %>" class="title" title="<%= @topic.title %>"><%= @topic.title %></a>
                                     <div class="space"></div>
                                     <div class="info">
 
                                         <% if @topic.user == current_user %>
-                                        <span class="label label-default pull-right"><a href="/ask/<%= @topic.id %>/edit" title="编辑"><i class="fa fa-edit"></i></a> </span>
+                                        <span class="label label-default pull-right"><a href="/ask/topics/<%= @topic.id %>/edit" title="编辑"><i class="fa fa-edit"></i></a> </span>
                                         <% end %>
 
                                         <%= render 'io_ask/topics/tipbar', :topic => @topic %>
@@ -62,7 +62,7 @@
                                     <a href="/users/<%= c.user.ioask_name %>" class="pull-left mr-10 thumb-size"><%= ioask_avatar(c.user, :size => 48) %></a>
                                     <div class="info">
                                         <% if c.user == current_user %>
-                                        <span class="label label-default pull-right"><a href="/comments/<%= c.id %>/edit" title="编辑"><i class="fa fa-edit"></i></a> </span>
+                                        <span class="label label-default pull-right"><a href="/ask/comments/<%= c.id %>/edit" title="编辑"><i class="fa fa-edit"></i></a> </span>
                                         <% end %>
                                       
                                         <a href="/users/<%= c.user.ioask_name %>"><strong><%= c.user.ioask_name %></strong></a> •
@@ -92,7 +92,7 @@
                             <%= simple_form_for @topic.comments.build, :url => "/ask/topics/#{@topic.id}/comments" do |f| %>
 
                                 <div class="form-group">
-                                    <%= f.input :content, :required => true, as: :text, :label => false %>
+                                  <%= f.input :content, :required => true, as: :text, :placeholder => '请填写内容', :label => false, input_html: {:class => 'form-control'} %>
                                 </div>
                 
                                 
