@@ -2,6 +2,8 @@
 
   <div class="col-md-8">
 
+      
+
       <%= render 'io_ask/topics/breadcrumb', :category => @category, :topic => nil %>
 
       <div class="panel panel-default">
@@ -12,24 +14,24 @@
                 <% if @category.nil? %>
                 <ul class="nav nav-tabs" role="tablist">
                     <li <% if params[:latest] == 'topic' || params[:latest].nil? %>class="active"<% end %>>
-                      <a href="/ask/topics?lastest=topic">最新话题</a>
+                      <a href="/ask/topics?lastest=topic"><%= t '.latest_topic' %></a>
                     </li>
                     <li <% if params[:latest] == 'comment' %>class="active"<% end %>>
-                    <a href="/ask/topics?latest=comment">最新回复</a>
+                    <a href="/ask/topics?latest=comment"><%= t '.latest_reply' %></a>
                     </li>
                 </ul>
                 <% else %>
                 <p>
-                  <a href="/ask/topics">返回所有列表</a> / 
+                  <a href="/ask/topics"><%= t '.all_list' %></a> / 
                   <strong><%= @category.name %></strong> 当前共有 <%= @topics.count %> 主题
                 </p>
 
                 <ul class="nav nav-tabs" role="tablist">
                     <li <% if params[:latest] == 'topic' || params[:latest].nil? %>class="active"<% end %>>
-                      <a href="/ask/topics?cid=<%= @category.id %>&lastest=topic">最新主题</a>
+                      <a href="/ask/topics?cid=<%= @category.id %>&lastest=topic"><%= t '.latest_topic' %></a>
                     </li>
                     <li <% if params[:latest] == 'comment' %>class="active"<% end %>>
-                    <a href="/ask/topics?cid=<%= @category.id %>&latest=comment">最新回复</a>
+                    <a href="/ask/topics?cid=<%= @category.id %>&latest=comment"><%= t '.latest_reply' %></a>
                     </li>
                 </ul>
                 <% end %>

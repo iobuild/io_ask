@@ -144,6 +144,11 @@ end
 
 The exact same format can be used to redefine an existing method.
 
+We currently have support for the following languages:
+
+* Chinese (Simplified, zh-CN)
+
+Patches for new translations are very much welcome!
 
 
 ## OMG BUG! / OMG FEATURE REQUEST!

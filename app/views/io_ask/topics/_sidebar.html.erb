@@ -6,13 +6,13 @@
 
       <a class="btn btn-success btn-lg btn-block mb-20" href="/ask/topics/new">
         <i class="glyphicon glyphicon-edit"></i>
-        发表话题
+        <%= t 'new_topic', :scope => 'io_ask.general' %>
       </a>
 
 
       <div class="panel panel-default">
           <div class="panel-heading">
-              <h3 class="panel-title"><b>话题分类</b></h3>
+              <h3 class="panel-title"><b><%= t 'topic_category', :scope => 'io_ask.general' %></b></h3>
           </div>
           <div class="panel-body">
             <% @ask_categories.each do |c| %>

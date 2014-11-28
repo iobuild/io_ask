@@ -25,7 +25,7 @@
                                     <div class="info">
 
                                         <% if @topic.user == current_user %>
-                                        <span class="label label-default pull-right"><a href="/ask/topics/<%= @topic.id %>/edit" title="编辑"><i class="fa fa-edit"></i></a> </span>
+                                        <span class="label label-default pull-right"><a href="/ask/topics/<%= @topic.id %>/edit" title="<%= t 'edit', :scope => 'io_ask.general' %>"><i class="fa fa-edit"></i></a> </span>
                                         <% end %>
 
                                         <%= render 'io_ask/topics/tipbar', :topic => @topic %>
@@ -48,7 +48,7 @@
 
                     <div class="panel panel-default">
 
-                        <div class="panel-heading"><strong>评论列表 (<%= @topic.comment_count %> 回复)</strong></div>
+                        <div class="panel-heading"><strong><%= t 'comment_list', :scope => 'io_ask.general' %> (<%= @topic.comment_count %> <%= t 'reply', :scope => 'io_ask.general' %>)</strong></div>
 
                         <div class="panel-body content">
 
@@ -62,11 +62,11 @@
                                     <a href="/users/<%= c.user.ioask_name %>" class="pull-left mr-10 thumb-size"><%= ioask_avatar(c.user, :size => 48) %></a>
                                     <div class="info">
                                         <% if c.user == current_user %>
-                                        <span class="label label-default pull-right"><a href="/ask/comments/<%= c.id %>/edit" title="编辑"><i class="fa fa-edit"></i></a> </span>
+                                        <span class="label label-default pull-right"><a href="/ask/comments/<%= c.id %>/edit" title="<%= t 'edit', :scope => 'io_ask.general' %>"><i class="fa fa-edit"></i></a> </span>
                                         <% end %>
                                       
                                         <a href="/users/<%= c.user.ioask_name %>"><strong><%= c.user.ioask_name %></strong></a> •
-                                        <%= time_ago_in_words(c.created_at) %>前
+                                        <%= time_ago_in_words(c.created_at) %><%= t 'ago', :scope => 'io_ask.general' %>
                                     </div>
                                     <div class="space"></div>
                                     <div class="reply-content"><p><%= simple_format c.content %></p></div>
@@ -92,18 +92,19 @@
                             <%= simple_form_for @topic.comments.build, :url => "/ask/topics/#{@topic.id}/comments" do |f| %>
 
                                 <div class="form-group">
-                                  <%= f.input :content, :required => true, as: :text, :placeholder => '请填写内容', :label => false, input_html: {:class => 'form-control'} %>
+                                  <%= f.input :content, :required => true, as: :text, :placeholder => t('fill_content', :scope => 'io_ask.general'), :label => false, input_html: {:class => 'form-control'} %>
                                 </div>
                 
                                 
                                 <div class="form-group">
 
                                   <% if user_signed_in? %>
-                                    <%= f.submit "回复", :class => "btn btn-primary" %>
+                                    <%= f.submit t('reply', :scope => 'io_ask.general'), :class => "btn btn-primary" %>
                                   <% else %>
-                                     <p class="">如要发表评论，请先 
-                                      <a href="/users/sign_in", class = "btn btn-primary">登录</a> 
-                                      如果还没有账号，请先 <a href="/users/sign_up", class = "btn btn-primary">注册</a> 一个账号
+                                     <p class=""><%= t 'if_no_login', :scope => 'io_ask.general' %>
+                                      <a href="/users/sign_in", class = "btn btn-primary"><%= t 'login', :scope => 'io_ask.general' %></a> 
+                                      <%= t 'if_no_register', :scope => 'io_ask.general' %>
+                                       <a href="/users/sign_up", class = "btn btn-primary"><%= t 'register', :scope => 'io_ask.general' %></a>
                                     </p>
                                   <% end %>
 
