@@ -13,7 +13,7 @@ module IoAsk
       class_option "current-user-helper", :type => :string
 
       source_root File.expand_path("../templates", __FILE__)
-      desc "Used to install IoAsk"
+      desc "Used to install io_ask"
 
       def install_migrations
         puts "Copying over io_ask migrations..."

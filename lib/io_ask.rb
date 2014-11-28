@@ -5,7 +5,7 @@ require "io_ask/engine"
 
 module IoAsk
 
-  mattr_accessor :user_class, :category_class, :layout, :avatar_user_method
+  mattr_accessor :user_class, :category_class, :layout
 
 
   class << self
@@ -21,6 +21,10 @@ module IoAsk
         def ioask_name
           to_s
         end unless method_defined? :ioask_name
+
+        def ioask_avatar
+          to_s
+        end unless method_defined? :ioask_avatar
 
         # Using +email+ by default for backwards compatibility. This attribute
         # it's optional
