@@ -144,7 +144,7 @@ end
 
 The exact same format can be used to redefine an existing method.
 
-## We currently have support for the following languages:
+## Currently support the following languages:
 
 * Chinese (Simplified, zh-CN)
 
