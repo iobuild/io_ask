@@ -7,7 +7,6 @@ FactoryGirl.define do
     t.category {|u| u.association(:category) }
 
 
-    factory :approved_post, :traits => [:approved]
   end
 
 end

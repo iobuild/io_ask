@@ -51,7 +51,8 @@ module IoAsk
       template "config/application.rb", "#{dummy_path}/config/application.rb", :force => true
       template "config/routes.rb", "#{dummy_path}/config/routes.rb", :force => true
       template "config/initializers/devise.rb", "#{dummy_path}/config/initializers/devise.rb", :force => true
-      template "1_create_io_ask_topics.rb", "#{dummy_path}/db/migrate/1_create_io_ask_topics.rb", :force => true
+      template "db/migrate/1_create_users.rb", "#{dummy_path}/db/migrate/1_create_users.rb", :force => true
+      template "db/migrate/2_create_categories.rb", "#{dummy_path}/db/migrate/2_create_categories.rb", :force => true
       template "Rakefile", "#{dummy_path}/Rakefile", :force => true
       inject_into_file "#{dummy_path}/config/environments/test.rb",
                   "\n  config.action_mailer.default_url_options = { :host => 'www.example.com' }\n",

@@ -26,15 +26,15 @@ describe IoAsk::Topic do
   describe '评论' do
     before {
       Timecop.travel(Time.now - 3.day) do
-        @comment_1 = FactoryGirl.create(:comment, :commentable => @topic, :user => @user_1)
+        @comment_1 = FactoryGirl.create(:comment, :topic => @topic, :user => @user_1)
       end
 
       Timecop.travel(Time.now - 2.day) do
-        @comment_2 = FactoryGirl.create(:comment, :commentable => @topic, :user => @user_2)
+        @comment_2 = FactoryGirl.create(:comment, :topic => @topic, :user => @user_2)
       end
 
       Timecop.travel(Time.now - 1.day) do
-        @comment_3 = FactoryGirl.create(:comment, :commentable => @topic, :user => @user_3)
+        @comment_3 = FactoryGirl.create(:comment, :topic => @topic, :user => @user_3)
       end
     }
 
@@ -81,7 +81,7 @@ describe IoAsk::Topic do
     describe "添加 comment" do
       before {
         @user_4 = FactoryGirl.create(:user)
-        @comment_4 = FactoryGirl.create(:comment, :commentable => @topic, :user => @user_4)
+        @comment_4 = FactoryGirl.create(:comment, :topic => @topic, :user => @user_4)
       }
 
       it "comment_count 正确" do
