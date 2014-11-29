@@ -26,7 +26,7 @@ module IoAsk
 
       invoke Rails::Generators::AppGenerator, [full_dummy_path], opts
 
-      run "rails generate io_ask:install --user-class=User --no-migrate=true --current-user-helper=current_user"
+      run "rails generate io_ask:install --user-class=User --category-class=Category --no-migrate=true --current-user-helper=current_user"
     end
 
     def test_dummy_clean

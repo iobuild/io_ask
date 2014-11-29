@@ -22,3 +22,17 @@ require 'decorators'
 require 'bootstrap-sass'
 require 'simple_form'
 require 'font-awesome-sass'
+
+
+# We need one of the two pagination engines loaded by this point.
+# We don't care which one, just one of them will do.
+begin
+  require 'kaminari'
+rescue LoadError
+  begin
+    require 'will_paginate'
+  rescue LoadError
+   puts "Please add the kaminari or will_paginate gem to your application's Gemfile. The io_ask engine needs either kaminari or will_paginate in order to paginate."
+   exit
+  end
+end
