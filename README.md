@@ -1,5 +1,5 @@
 # Why io_ask
-Most of the time we don't need a large forum or bbs like phpbb, vbulletin or other complecated discus. We just need a simple, lightweight and easy ask/answer module. That's why io_ask appears.
+Most of the time we don't need a large forum or bbs like phpbb, vbulletin or other complecated discuss board. We just need a simple, lightweight and easy ask/answer module. That's why io_ask appears.
 
 
 io_ask is an engine for Rails that aims to be the best little ask system ever.
