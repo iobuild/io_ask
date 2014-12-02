@@ -1,14 +1,12 @@
+# Why io_ask
+Most of the time we don't need a large forum or bbs like phpbb, vbulletin or other complecated discus. We just need a simple, lightweight and easy ask/answer module. That's why io_ask appears.
+
+
 io_ask is an engine for Rails that aims to be the best little ask system ever.
 The end goal is to have an engine that can be dropped into an application that
 provides the basic functionality of ask/answer, topics and comments.
 
 
-
-# Installation
-
-Installing io_ask is easy.
-
-## Specify Gem dependencies
 
 # Installation
 
@@ -169,8 +167,8 @@ If all the tests are passing (they usually are), then you're good to go! Develop
 
 ## Contributors
 
-* Arly Xiao
-* [And more](https://github.com/iobuild/io_ask/contributors)
+* Arly Xiao ([@arlyxiao](https://github.com/arlyxiao))
+* [List of all contributors](https://github.com/iobuild/io_ask/contributors)
 
 ## Places using io_ask
 

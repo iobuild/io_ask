@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.name        = "io_ask"
   s.version     = IoAsk::VERSION
   s.authors     = ["Arly Xiao"]
-  s.email       = ["kingla_pei@163.com"]
+  s.email       = ["arlyxiao@163.com"]
   s.homepage    = "http://iobuild.github.io"
   s.summary     = "The best ask rails engine in the world"
   s.description = "The best ask rails engine in the world"
