@@ -15,8 +15,10 @@
               <h3 class="panel-title"><b><%= t 'topic_category', :scope => 'io_ask.general' %></b></h3>
           </div>
           <div class="panel-body">
-            <% @ask_categories.each do |c| %>
-              <a href="/ask/topics?cid=<%= c.id %>" class="btn"><%= c.name %></a>
+            <% if @ask_categories %>
+              <% @ask_categories.each do |c| %>
+                <a href="/ask/topics?cid=<%= c.id %>" class="btn"><%= c.name %></a>
+              <% end %>
             <% end %>
           </div>
       </div>

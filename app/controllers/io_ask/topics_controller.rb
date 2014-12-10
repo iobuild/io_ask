@@ -13,7 +13,7 @@ module IoAsk
       @topic = IoAsk::Topic.find(params[:id]) if params[:id]
       @category = @topic.category if @topic
 
-      @ask_categories = IoAsk::Category.for_ask
+      @ask_categories = IoAsk::Category.for_ask if IoAsk::Category.has_ask_categories?
     end
 
     def topic_params
