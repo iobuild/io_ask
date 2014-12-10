@@ -5,6 +5,6 @@
 <%= time_ago_in_words(topic.created_at) %> <%= t 'ago', :scope => 'io_ask.general' %>
 
 <% if topic.comment_count > 0 %>
-• <%= topic.comment_count %> <%= t 'reply', :scope => 'io_ask.general' %> 
-• <a href="/users/<%= topic.last_comment_user.ioask_name %>"><%= topic.last_comment_user.ioask_name %></a> 在 <%= time_ago_in_words(topic.last_commented_at) %><%= t 'ago', :scope => 'io_ask.general' %><%= t 'reply', :scope => 'io_ask.general' %>
+• <%= topic.comment_count %> <%= t 'replies', :scope => 'io_ask.general' %> 
+• <a href="/users/<%= topic.last_comment_user.ioask_name %>"><%= topic.last_comment_user.ioask_name %></a> <%= time_ago_in_words(topic.last_commented_at) %> <%= t 'replied', :scope => 'io_ask.general' %>
 <% end %>

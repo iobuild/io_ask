@@ -48,7 +48,7 @@
 
                     <div class="panel panel-default">
 
-                        <div class="panel-heading"><strong><%= t 'comment_list', :scope => 'io_ask.general' %> (<%= @topic.comment_count %> <%= t 'reply', :scope => 'io_ask.general' %>)</strong></div>
+                        <div class="panel-heading"><strong><%= t 'comment_list', :scope => 'io_ask.general' %> (<%= @topic.comment_count %> <%= t 'replies', :scope => 'io_ask.general' %>)</strong></div>
 
                         <div class="panel-body content">
 
@@ -66,7 +66,7 @@
                                         <% end %>
                                       
                                         <a href="/users/<%= c.user.ioask_name %>"><strong><%= c.user.ioask_name %></strong></a> •
-                                        <%= time_ago_in_words(c.created_at) %><%= t 'ago', :scope => 'io_ask.general' %>
+                                        <%= time_ago_in_words(c.created_at) %> <%= t 'ago', :scope => 'io_ask.general' %>
                                     </div>
                                     <div class="space"></div>
                                     <div class="reply-content"><p><%= simple_format c.content %></p></div>

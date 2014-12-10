@@ -12,11 +12,13 @@ en-US:
       ago: ago
       create: created
       reply: Reply
+      replied: ago
+      replies: replies
       edit: Edit
       login: sign in
       register: sign up
-      if_no_login: if no login, please
-      if_no_register: if no register, please
+      if_no_login: If no login, please
+      if_no_register: If no register, please
       fill_content: content
       fill_title: title
       fill_category: select
@@ -24,15 +26,15 @@ en-US:
     topics:
       index:
         all_list: All list
-        latest_topic: latest topics
-        latest_reply: latest reply
+        latest_topic: Latest topics
+        latest_reply: Latest reply
       edit:
-        cancel_edit: cancel
-        edit_topic: edit
+        cancel_edit: Cancel
+        edit_topic: Edit
 
     comments:
       edit:
-        edit_comment: edit
+        edit_comment: Edit
 
 
 
