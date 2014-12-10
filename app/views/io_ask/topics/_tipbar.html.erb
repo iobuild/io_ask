@@ -2,7 +2,7 @@
 <a href="/users/<%= topic.user.ioask_name %>"><strong><%= topic.user.ioask_name %></strong></a> •
 
     
-<%= time_ago_in_words(topic.created_at) %><%= t 'ago', :scope => 'io_ask.general' %><%= t 'create', :scope => 'io_ask.general' %>
+<%= time_ago_in_words(topic.created_at) %> <%= t 'ago', :scope => 'io_ask.general' %>
 
 <% if topic.comment_count > 0 %>
 • <%= topic.comment_count %> <%= t 'reply', :scope => 'io_ask.general' %> 
