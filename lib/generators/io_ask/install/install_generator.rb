@@ -91,11 +91,11 @@ module IoAsk
         puts "Mounting IoAsk::Engine at \"/io_ask\" in config/routes.rb..."
         insert_into_file("#{Rails.root}/config/routes.rb", :after => /routes.draw.do\n/) do
           %Q{
-  # This line mounts IoAsk's routes at /ask by default.
+  # This line mounts io_ask's routes at /ask by default.
   # This means, any requests to the /ask URL of your application will go to IoAsk::TopicsController#index.
   # If you would like to change where this extension is mounted, simply change the :at option to something different.
   #
-  # We ask that you don't use the :as option here, as IoAsk relies on it being the default of "IoAsk"
+  # We ask that you don't use the :as option here, as io_ask relies on it being the default of "io_ask"
   mount IoAsk::Engine, :at => '/ask'
 
 }
@@ -149,7 +149,7 @@ output += step("`rake db:migrate` was run, running all the migrations against yo
 
    Either way, io_ask needs one of these two things in order to work properly. Please define them!}
         end
-        output += "\nIf you have any questions, comments or issues, please post them on our issues page: http://github.com/radar/IoAsk/issues.\n\n"
+        output += "\nIf you have any questions, comments or issues, please post them on our issues page: http://github.com/iobuild/io_ask/issues.\n\n"
         output += "Thanks for using io_ask!"
         puts output
       end
