@@ -92,7 +92,7 @@
                             <%= simple_form_for @topic.comments.build, :url => "/ask/topics/#{@topic.id}/comments" do |f| %>
 
                                 <div class="form-group">
-                                  <%= f.input :content, :required => true, as: :text, :placeholder => t('fill_content', :scope => 'io_ask.general'), :label => false, input_html: {:class => 'form-control'} %>
+                                  <%= f.input :content, :required => true, as: :text, :placeholder => t('fill_content', :scope => 'io_ask.general'), :label => false, input_html: {:class => 'form-control', :rows => 12} %>
                                 </div>
                 
                                 
