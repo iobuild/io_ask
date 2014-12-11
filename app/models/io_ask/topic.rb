@@ -11,7 +11,7 @@ module IoAsk
 
 
 
-    default_scope -> { order('id desc') }
+    default_scope -> { order('created_at desc') }
 
     scope :last_commented, -> {  unscoped.order('last_commented_at desc') }
     scope :by_category, ->(category_id) { where("category_id = ?", category_id) }
