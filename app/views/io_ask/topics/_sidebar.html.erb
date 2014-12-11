@@ -16,9 +16,7 @@
           </div>
           <div class="panel-body">
             <% if @ask_categories %>
-              <% @ask_categories.each do |c| %>
-                <a href="/ask/topics?cid=<%= c.id %>" class="btn"><%= c.name %></a>
-              <% end %>
+              <%= show_sidebar_categories(@ask_categories) %>
             <% end %>
           </div>
       </div>

@@ -30,7 +30,7 @@ gem 'awesome_nested_set'
 ## Run the installer
 
 **Ensure that you first of all have a `User` model and some sort of authentication system set up**. We would recommend going with [Devise](http://github.com/plataformatec/devise), but it's up to
-you. All io_ask needs is a model to link topics and posts to.
+you. All io_ask needs is a model to link topics and comments to.
 
 Run the installer and answer any questions that pop up. There's sensible defaults there if you don't want to answer them.
 
@@ -40,7 +40,7 @@ rails g io_ask:install
 
 ## Set up helper methods in your user model
 
-io_ask uses a `ioask_name` and `ioask_avatar` (which defaults as `to_s`) method being available on your `User` model so that it can display the user's name in posts. Define it in your model like this:
+io_ask uses a `ioask_name` and `ioask_avatar` (which defaults as `to_s`) method being available on your `User` model so that it can display the user's name in topics. Define it in your model like this:
 
 ```ruby
 def ioask_name
@@ -116,7 +116,7 @@ All of io_ask business logic (models, controllers, helpers, etc) can easily be e
 
 Standard practice for including such changes in your application or extension is to create a directory app/decorators. place file within the relevant app/decorators/models or app/decorators/controllers directory with the original class name with _decorator appended.
 
-### Adding a custom method to the Post model:
+### Adding a custom method to the Topic model:
 
 ```ruby
 # app/decorators/models/io_ask/topic_decorator.rb
@@ -131,7 +131,7 @@ end
 ### Adding a custom method to the TopicsController:
 
 ```ruby
-# app/decorators/controllers/io_ask/posts_controller_decorator.rb
+# app/decorators/controllers/io_ask/topics_controller_decorator.rb
 
 IoAsk::TopicsController.class_eval do
   def some_action

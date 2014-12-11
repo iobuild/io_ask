@@ -1,13 +1,16 @@
 <ol class="breadcrumb">
   <li><a href="/"><i class="fa fa-home"></i> <%= t 'home', :scope => 'io_ask.general' %></a></li>
+
+
   <li><a href="/ask/topics"><%= t 'forum', :scope => 'io_ask.general' %></a></li>
 
-  <% unless category.nil? %>
+
+  <% if category %>
     <li><a href="/ask/topics?cid=<%= category.id %>"><%= category.name %></a></li>
   <% end %>
 
-  <% unless topic.nil? %>
-    <% unless topic.category.nil? %>
+  <% if topic %>
+    <% if topic.category %>
     <li><a href="/ask/topics?cid=<%= topic.category.id %>"><%= topic.category.name %></a></li>
     <% end %>
   <% end %>

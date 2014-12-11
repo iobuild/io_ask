@@ -2,13 +2,15 @@ module IoAsk
 
   class CommentsController < IoAsk::ApplicationController
 
-    before_filter :pre_load
+    before_filter :pre_extend, :pre_load
 
-    def pre_load
+    def pre_extend
+      super
+    end
+
+    def pre_load      
       @topic = IoAsk::Topic.find(params[:topic_id]) if params[:topic_id]
       @comment = IoAsk::Comment.find(params[:id]) if params[:id]
-
-      @ask_categories = IoAsk::Category.for_ask
     end
 
     def comment_params
