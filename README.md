@@ -13,7 +13,7 @@ provides the basic functionality of ask/answer, topics and comments.
 Using Rails 4
 
 ```ruby
-gem 'io_ask', :github => "git@github.com:iobuild/io_ask.git"
+gem 'io_ask', :github => "https://github.com/iobuild/io_ask.git"
 ```
 
 And then one of `kaminari` or `will_paginate`
