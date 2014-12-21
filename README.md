@@ -52,6 +52,13 @@ def ioask_avatar
 end
 ```
 
+
+
+Change the default layout setting in config/initializers/io_ask.rb
+```ruby
+IoAsk.layout = 'default'
+```
+
 Please note that if you are using Devise, User model does not have `name` column by default,
 so you either should use custom migration to add it or use another column (`email` for example).
 
