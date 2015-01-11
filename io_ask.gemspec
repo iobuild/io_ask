@@ -33,7 +33,7 @@ Gem::Specification.new do |s|
 
 
   s.add_dependency 'rails', '~> 4.0', '<= 4.2'
-  s.add_dependency 'simple_form', '~> 3.0.1'
+  s.add_dependency 'simple_form', '~> 3.1.0'
   s.add_dependency 'decorators', '~> 1.0.2'
   s.add_dependency 'mysql2'
 
