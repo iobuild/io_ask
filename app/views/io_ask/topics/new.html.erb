@@ -1,14 +1,11 @@
+<%#= render "io_ask/topics/sidebar" %>
 
-<div class="container">
+    <div class="container-fluid">
 
-    <div class="col-md-8">
 
         <%= render 'io_ask/topics/breadcrumb', :category => nil, :topic => @topic %>
 
-        <div class="panel panel-default">
-
-            <div class="panel-heading"><strong><%= t 'new_topic', :scope => 'io_ask.general' %></strong></div>
-
+ 
             <div class="panel-body">
 
                 <div class="col-md-12">
@@ -42,17 +39,11 @@
 
 
 
-        </div>
-
+ 
         
 
     </div>
 
 
 
-    <%= render "io_ask/topics/sidebar" %>
-
-
-
-</div>
-<!-- /.row -->
+    

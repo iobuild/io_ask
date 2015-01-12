@@ -1,17 +1,13 @@
+<%#= render "io_ask/topics/sidebar" %>
 
-<div class="container">
+    <div class="container-fluid">
 
-    <div class="col-md-8">
 
-        <%= render 'io_ask/topics/breadcrumb', :category => nil, :topic => @comment.topic %>
+        <%= render 'io_ask/topics/breadcrumb', :category => nil, :topic => @topic %>
 
-        <div class="panel panel-default">
-
-            <div class="panel-heading"><strong><%= t '.edit_comment' %></strong></div>
-
+ 
             <div class="panel-body">
 
-                <div class="col-md-12">
 
                   <%= simple_form_for @comment, :url => "/ask/comments/#{@comment.id}" do |f| %>
 
@@ -29,25 +25,21 @@
 
                   <% end %>
 
-                </div>
+
+
+
 
             </div>
 
 
 
-        </div>
-
+ 
         
 
     </div>
 
 
 
-    <%= render "io_ask/topics/sidebar" %>
 
-
-
-</div>
-<!-- /.row -->
 
   

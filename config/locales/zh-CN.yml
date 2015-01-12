@@ -22,7 +22,7 @@ zh-CN:
       if_no_register: 如果还没注册, 请先
       fill_content: 请填写内容
       fill_title: 请填写标题
-      fill_category: 请选择分类
+      fill_category: 选择分类
 
     topics:
       index:

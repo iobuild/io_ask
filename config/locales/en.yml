@@ -21,7 +21,7 @@ en:
       if_no_register: If no register, please
       fill_content: content
       fill_title: title
-      fill_category: select
+      fill_category: Select Category
 
     topics:
       index:

@@ -1,15 +1,19 @@
-<div class="container">
+<div class="container-fluid">
 
-  <div class="col-md-8">
 
-      
+  
+
+
+ 
 
       <%= render 'io_ask/topics/breadcrumb', :category => @category, :topic => nil %>
 
-      <div class="panel panel-default">
 
+      <%#= render "io_ask/topics/sidebar" %>
 
-          <div class="panel-body">
+      <%= render "io_ask/topics/categorybar" %>
+
+  
 
                 <% if @category.nil? %>
                 <ul class="nav nav-tabs" role="tablist">
@@ -67,19 +71,11 @@
 
                 <div class="pull-right"><%= paginate @topics %></div>
 
-
-          </div>
-
-
-
-      </div>
-
+ 
         
 
-  </div>
+ 
 
-
-  <%= render "io_ask/topics/sidebar" %>
 
 
 

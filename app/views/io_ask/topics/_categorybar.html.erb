@@ -1,0 +1,20 @@
+
+
+
+<div class="panel-default mb-20" style="width: 100%; float: left;">
+    <a class="btn btn-success pull-left" href="/ask/topics/new">
+    <i class="glyphicon glyphicon-edit"></i><%= t 'new_topic', :scope => 'io_ask.general' %>
+    </a>
+
+    <div class="input-group-btn" style="width: 20px; float: left; margin-left: 10px;">
+
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><%= t 'fill_category', :scope => 'io_ask.general' %> <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <% @ask_categories.each do |c| %>
+          <li><a href="/ask/topics?cid=<%= c.id %>"><%= c.name %></a></li>
+          <% end %>
+        </ul>
+
+      </div>
+
+</div>

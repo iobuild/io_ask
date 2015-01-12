@@ -1,5 +1,5 @@
 <ol class="breadcrumb">
-  <li><a href="/"><i class="fa fa-home"></i> <%= t 'home', :scope => 'io_ask.general' %></a></li>
+  <li><a href="/"><i class="fa fa-home"></i></a></li>
 
 
   <li><a href="/ask/topics"><%= t 'forum', :scope => 'io_ask.general' %></a></li>
@@ -14,4 +14,21 @@
     <li><a href="/ask/topics?cid=<%= topic.category.id %>"><%= topic.category.name %></a></li>
     <% end %>
   <% end %>
+
+  <%#= params[:controller] %>
+
+  <% if params[:action] == 'new' && params[:controller] == 'io_ask/topics' %>
+    <li><%= t 'new_topic', :scope => 'io_ask.general' %></li>
+  <% end %>
+
+  <% if params[:action] == 'edit' && params[:controller] == 'io_ask/topics' %>
+    <li><%= t 'edit_topic', :scope => 'io_ask.topics.edit' %></li>
+  <% end %>
+
+
+  <% if params[:action] == 'edit' && params[:controller] == 'io_ask/comments' %>
+    <li><%= t 'edit_comment', :scope => 'io_ask.comments.edit' %></li>
+  <% end %>
+
+
 </ol>

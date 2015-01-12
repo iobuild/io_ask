@@ -1,134 +1,115 @@
-        <div class="container">
+        <div class="container-fluid">
 
+            <%= render 'io_ask/topics/breadcrumb', :category => nil, :topic => @topic %>
+            
 
-            <div class="col-md-8">
+            <div class="content">
+                <div class="panel panel-default">
 
-                <%= render 'io_ask/topics/breadcrumb', :category => nil, :topic => @topic %>
-                
+                  <div class="panel-body">
 
-                <div class="content">
-                    <div class="panel panel-default">
+                      <dl class="topics">
+                      
+                          
+                          <dd>
+                            <a href="/users/<%= @topic.user.ioask_name %>" class="pull-left mr-10 thumb-size">
+                              <%= ioask_avatar(@topic.user, :size => 48) %>
+                            </a>
+                              
+                              
+                              <a href="/ask/topics/<%= @topic.id %>" class="title" title="<%= @topic.title %>"><%= @topic.title %></a>
+                              <div class="space"></div>
+                              <div class="info">
 
-                        <div class="panel-body">
-
-                            <dl class="topics">
-                            
-                                
-                                <dd>
-                                  <a href="/users/<%= @topic.user.ioask_name %>" class="pull-left mr-10 thumb-size">
-                                    <%= ioask_avatar(@topic.user, :size => 48) %>
-                                  </a>
-                                    
-                                    
-                                    <a href="/ask/topics/<%= @topic.id %>" class="title" title="<%= @topic.title %>"><%= @topic.title %></a>
-                                    <div class="space"></div>
-                                    <div class="info">
-
-                                        <% if @topic.user == current_user %>
-                                        <span class="label label-default pull-right"><a href="/ask/topics/<%= @topic.id %>/edit" title="<%= t 'edit', :scope => 'io_ask.general' %>"><i class="fa fa-edit"></i></a> </span>
-                                        <% end %>
-
-                                        <%= render 'io_ask/topics/tipbar', :topic => @topic %>
-                                    </div>
-                                    <div class="clear"></div>
-                                </dd>
-                                
-                            
-                            </dl>
-                            
-
-                            <p>
-                              <%= simple_format @topic.content %>
-                            </p>
-
-
-                        </div>
-                    </div>
-
-
-                    <div class="panel panel-default">
-
-                        <div class="panel-heading"><strong><%= t 'comment_list', :scope => 'io_ask.general' %> (<%= @topic.comment_count %> <%= t 'replies', :scope => 'io_ask.general' %>)</strong></div>
-
-                        <div class="panel-body content">
-
-                            
-                            <dl class="replies">
-        
-                                <%
-                                  @comments.each do |c|
-                                %>
-                                <dd id="comment-<%= c.id %>">
-                                    <a href="/users/<%= c.user.ioask_name %>" class="pull-left mr-10 thumb-size"><%= ioask_avatar(c.user, :size => 48) %></a>
-                                    <div class="info">
-                                        <% if c.user == current_user %>
-                                        <span class="label label-default pull-right"><a href="/ask/comments/<%= c.id %>/edit" title="<%= t 'edit', :scope => 'io_ask.general' %>"><i class="fa fa-edit"></i></a> </span>
-                                        <% end %>
-                                      
-                                        <a href="/users/<%= c.user.ioask_name %>"><strong><%= c.user.ioask_name %></strong></a> •
-                                        <%= time_ago_in_words(c.created_at) %> <%= t 'ago', :scope => 'io_ask.general' %>
-                                    </div>
-                                    <div class="space"></div>
-                                    <div class="reply-content"><p><%= simple_format c.content %></p></div>
-                                    <div class="clear"></div>
-                                </dd>
-                                <% end %>
-
-
-                            </dl>
-
-                            <div class="pull-right"><%= paginate @comments %></div>
-
-                        </div>
-                    </div>
-
-
-                    <div class="panel panel-default">
-                    
-                        <div class="panel-body">
-
-
-                            
-                            <%= simple_form_for @topic.comments.build, :url => "/ask/topics/#{@topic.id}/comments" do |f| %>
-
-                                <div class="form-group">
-                                  <%= f.input :content, :required => true, as: :text, :placeholder => t('fill_content', :scope => 'io_ask.general'), :label => false, input_html: {:class => 'form-control', :rows => 12} %>
-                                </div>
-                
-                                
-                                <div class="form-group">
-
-                                  <% if user_signed_in? %>
-                                    <%= f.submit t('reply', :scope => 'io_ask.general'), :class => "btn btn-primary" %>
-                                  <% else %>
-                                     <p class=""><%= t 'if_no_login', :scope => 'io_ask.general' %>
-                                      <a href="/users/sign_in", class = "btn btn-primary"><%= t 'login', :scope => 'io_ask.general' %></a> 
-                                      <%= t 'if_no_register', :scope => 'io_ask.general' %>
-                                       <a href="/users/sign_up", class = "btn btn-primary"><%= t 'register', :scope => 'io_ask.general' %></a>
-                                    </p>
+                                  <% if @topic.user == current_user %>
+                                  <span class="label label-default pull-right"><a href="/ask/topics/<%= @topic.id %>/edit" title="<%= t 'edit', :scope => 'io_ask.general' %>"><i class="fa fa-edit"></i></a> </span>
                                   <% end %>
 
+                                  <%= render 'io_ask/topics/tipbar', :topic => @topic %>
+                              </div>
+                              <div class="clear"></div>
+                          </dd>
+                          
+                      
+                      </dl>
+                      
+
+                      <p>
+                        <%= simple_format @topic.content %>
+                      </p>
+
+
+                  </div>
+                </div>
+
+
+                <div class="panel panel-default">
+
+                    <div class="panel-heading"><strong><%= t 'comment_list', :scope => 'io_ask.general' %> (<%= @topic.comment_count %> <%= t 'replies', :scope => 'io_ask.general' %>)</strong></div>
+
+                    <div class="panel-body content">
+
+                        
+                        <dl class="replies">
+    
+                            <%
+                              @comments.each do |c|
+                            %>
+                            <dd id="comment-<%= c.id %>">
+                                <a href="/users/<%= c.user.ioask_name %>" class="pull-left mr-10 thumb-size"><%= ioask_avatar(c.user, :size => 48) %></a>
+                                <div class="info">
+                                    <% if c.user == current_user %>
+                                    <span class="label label-default pull-right"><a href="/ask/comments/<%= c.id %>/edit" title="<%= t 'edit', :scope => 'io_ask.general' %>"><i class="fa fa-edit"></i></a> </span>
+                                    <% end %>
+                                  
+                                    <a href="/users/<%= c.user.ioask_name %>"><strong><%= c.user.ioask_name %></strong></a> •
+                                    <%= time_ago_in_words(c.created_at) %> <%= t 'ago', :scope => 'io_ask.general' %>
                                 </div>
-                                
+                                <div class="space"></div>
+                                <div class="reply-content"><p><%= simple_format c.content %></p></div>
+                                <div class="clear"></div>
+                            </dd>
                             <% end %>
 
-                                       
 
-                        </div>
+                        </dl>
+
+                        <div class="pull-right"><%= paginate @comments %></div>
 
                     </div>
-
-
-
-
                 </div>
+
+
+                 
  
+
+                        
+                <%= simple_form_for @topic.comments.build, :url => "/ask/topics/#{@topic.id}/comments" do |f| %>
+
+                    <div class="form-group">
+                      <%= f.input :content, :required => true, as: :text, :placeholder => t('fill_content', :scope => 'io_ask.general'), :label => false, input_html: {:class => 'form-control', :rows => 12} %>
+                    </div>
+    
+                    
+                    <div class="form-group">
+
+                      <% if user_signed_in? %>
+                        <%= f.submit t('reply', :scope => 'io_ask.general'), :class => "btn btn-primary" %>
+                      <% else %>
+                         <p class=""><%= t 'if_no_login', :scope => 'io_ask.general' %>
+                          <a href="/users/sign_in", class = "btn btn-primary"><%= t 'login', :scope => 'io_ask.general' %></a> 
+                          <%= t 'if_no_register', :scope => 'io_ask.general' %>
+                           <a href="/users/sign_up", class = "btn btn-primary"><%= t 'register', :scope => 'io_ask.general' %></a>
+                        </p>
+                      <% end %>
+
+                    </div>
+                    
+                <% end %>
 
 
             </div>
 
 
-            <%= render "io_ask/topics/sidebar" %>
 
         </div>
-        <!-- /.row -->

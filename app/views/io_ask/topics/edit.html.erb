@@ -1,19 +1,11 @@
+<%#= render "io_ask/topics/sidebar" %>
 
-<div class="container">
+    <div class="container-fluid">
 
-    <div class="col-md-8">
 
         <%= render 'io_ask/topics/breadcrumb', :category => nil, :topic => @topic %>
 
-        <div class="panel panel-default">
-
-            <div class="panel-heading">
-              <strong><%= t '.edit_topic' %></strong>
-              / 
-              <a href="/ask/<%= @topic.id %>"><%= t '.cancel_edit' %></a>
-
-            </div>
-
+ 
             <div class="panel-body">
 
                 <div class="col-md-12">
@@ -38,10 +30,8 @@
                     <div class="form-group">
                       <%= f.submit t('save', :scope => 'io_ask.general'), :class => "btn btn-primary" %>
                     </div>
-                  <% end %>
+                  <% end %> 
 
-
- 
                 </div>
 
 
@@ -51,19 +41,9 @@
 
 
 
-        </div>
-
+ 
         
 
     </div>
-
-
-
-    <%= render "io_ask/topics/sidebar" %>
-
-
-
-</div>
-<!-- /.row -->
 
 
