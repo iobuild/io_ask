@@ -105,11 +105,13 @@ module IoAsk
       def create_assets
         create_file Rails.root + "vendor/assets/stylesheets/io_ask.css.scss" do
           %Q{
+
+
           }
         end
-        create_file Rails.root + "vendor/assets/javascripts/io_ask.js.coffee" do
+        create_file Rails.root + "vendor/assets/javascripts/io_ask.js" do
           %Q{
-#= require jquery
+            
           }
         end
       end

@@ -25,11 +25,6 @@
                     </li>
                 </ul>
                 <% else %>
-                <p>
-                  <a href="/ask/topics"><%= t '.all_list' %></a> / 
-                  <strong><%= @category.name %></strong>
-                </p>
-
                 <ul class="nav nav-tabs" role="tablist">
                     <li <% if params[:latest] == 'topic' || params[:latest].nil? %>class="active"<% end %>>
                       <a href="/ask/topics?cid=<%= @category.id %>&lastest=topic"><%= t '.latest_topic' %></a>
