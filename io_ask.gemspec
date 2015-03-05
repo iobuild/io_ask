@@ -41,7 +41,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'sass-rails', '>= 3.2'
   s.add_dependency 'autoprefixer-rails'
   s.add_dependency 'coffee-rails', '~> 4.0'
-  s.add_dependency 'font-awesome-sass', '~> 4.2.0'
+  s.add_dependency 'font-awesome-sass'
 
 
 end
