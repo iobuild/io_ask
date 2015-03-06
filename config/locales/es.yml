@@ -17,11 +17,9 @@ es:
       edit: Editar
       login: entrar
       register: registrarse
-      if_no_login: Si no entrar, por favor
-      if_no_register: Si no registrarse, por favor
-      fill_content: contenido
-      fill_title: título
-      fill_category: seleccionar
+      fill_content: Escribe el tema contenido
+      fill_title: Escribe el tema título
+      fill_category: Selecciona la categoría
 
     topics:
       index:

@@ -17,10 +17,8 @@ en:
       edit: Edit
       login: sign in
       register: sign up
-      if_no_login: If no login, please
-      if_no_register: If no register, please
-      fill_content: content
-      fill_title: title
+      fill_content: Input the topic content
+      fill_title: Input the topic title
       fill_category: Select Category
 
     topics:
