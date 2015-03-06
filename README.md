@@ -179,6 +179,6 @@ If all the tests are passing (they usually are), then you're good to go! Develop
 
 ## Places using io_ask
 
-* [Oncedoce Ask](http://www.oncedoce.com/ask)
+* [Oncedoce](http://www.oncedoce.com/ask)
 
 If you want yours added here, just ask!
