@@ -3,44 +3,32 @@
     <div class="container-fluid">
 
 
-        <%= render 'io_ask/topics/breadcrumb', :category => nil, :topic => @topic %>
+      <%= render 'io_ask/topics/breadcrumb', :category => nil, :topic => @topic %>
 
  
-            <div class="panel-body">
-
-                <div class="col-md-12">
-                <%= simple_form_for @topic, :url => "/ask/topics", :html => {:class => 'form-horizontal'} do |f| %>
-
-                    <div class="form-group">
-                      <%= f.input :category_id, :label => false, :required => true, :collection => @ask_categories, :include_blank => true, prompt: t('fill_category', :scope => 'io_ask.general') %>
-                    </div>
-
-                    
-                    <div class="form-group">
-                      <%= f.input :title, :label => false, :placeholder => t('fill_title', :scope => 'io_ask.general'), input_html: {:class => 'form-control'}, :required => true %>
-                    </div>
-
-
-                    <div class="form-group">
-                      <%= f.input :content, :required => true, as: :text, :placeholder => t('fill_content', :scope => 'io_ask.general'), :label => false, input_html: {:class => 'form-control', :rows => 18} %>
-                    </div>
-
-                    
-                    <div class="form-group">
-                      <%= f.submit t('save', :scope => 'io_ask.general'), :class => "btn btn-primary" %>
-                    </div>
-                <% end %>
-                </div>
-
-
-
-
-            </div>
-
-
-
  
-        
+       <%= simple_form_for @topic, :url => "/ask/topics", :html => {:class => 'form-vertical'} do |f| %>
+
+          <div class="form-group">
+            <%= f.input :category_id, :label => false, :required => true, :collection => @ask_categories, :include_blank => true, prompt: t('fill_category', :scope => 'io_ask.general') %>
+          </div>
+
+          
+          <div class="form-group">
+            <%= f.input :title, :label => false, :placeholder => t('fill_title', :scope => 'io_ask.general'), input_html: {:class => 'form-control'}, :required => true %>
+          </div>
+
+
+          <div class="form-group">
+            <%= f.input :content, :required => true, as: :text, :placeholder => t('fill_content', :scope => 'io_ask.general'), :label => false, input_html: {:class => 'form-control', :rows => 18} %>
+          </div>
+
+          
+          <div class="form-group">
+            <%= f.submit t('save', :scope => 'io_ask.general'), :class => "btn btn-primary" %>
+          </div>
+      <% end %>
+ 
 
     </div>
 

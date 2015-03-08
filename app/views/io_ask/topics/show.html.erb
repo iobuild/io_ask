@@ -35,7 +35,7 @@
                       
 
                       <p>
-                        <%= raw @topic.content %>
+                        <%= simple_format @topic.content %>
                       </p>
 
 
@@ -66,7 +66,7 @@
                                     <%= time_ago_in_words(c.created_at) %> <%= t 'ago', :scope => 'io_ask.general' %>
                                 </div>
                                 <div class="space"></div>
-                                <div class="reply-content"><p><%= raw c.content %></p></div>
+                                <div class="reply-content"><p><%= simple_format c.content %></p></div>
                                 <div class="clear"></div>
                             </dd>
                             <% end %>
@@ -98,7 +98,6 @@
                       <% else %>
                           <a href="/users/sign_in", class = "btn btn-primary"><%= t 'login', :scope => 'io_ask.general' %></a> 
                            <a href="/users/sign_up", class = "btn btn-primary"><%= t 'register', :scope => 'io_ask.general' %></a>
-                        </p>
                       <% end %>
 
                     </div>
