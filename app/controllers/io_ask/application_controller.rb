@@ -5,7 +5,8 @@ module IoAsk
     before_filter :pre_extend
 
     def pre_extend
-      @ask_categories = IoAsk::Category.all
+      # @ask_categories = IoAsk::Category.all
+      @ask_categories = IoAsk::Category.by_ask
     end
 
   end
