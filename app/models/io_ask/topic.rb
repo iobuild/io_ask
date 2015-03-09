@@ -23,6 +23,15 @@ module IoAsk
     paginates_per 12
 
 
+    def slug
+      title.downcase.gsub(" ", "-")  
+    end
+
+    def to_param
+      "#{id}-#{slug}"
+    end
+
+
     after_create :update_last_comment
     def update_last_comment
       self.last_comment_user = user

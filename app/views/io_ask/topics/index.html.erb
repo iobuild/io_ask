@@ -48,7 +48,8 @@
                         
                         <a class="badge pull-right" href=""><%= topic.comment_count %></a>
                         
-                        <a href="/ask/topics/<%= topic.id %>" class="title" title="<%= topic.title %>"><%= topic.title %></a>
+                        <a href="/ask/topics/<%= topic.to_param %>" class="title" title="<%= topic.title %>"><%= topic.title %></a>
+                        
                         <div class="space"></div>
                         <div class="info">
                             <%= render 'io_ask/topics/tipbar', :topic => topic %>
