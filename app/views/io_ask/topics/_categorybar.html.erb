@@ -11,7 +11,7 @@
     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><%= t 'fill_category', :scope => 'io_ask.general' %> <span class="caret"></span></button>
         <ul class="dropdown-menu" role="menu">
           <% @ask_categories.each do |c| %>
-          <li><a href="/ask/topics?cid=<%= c.id %>"><%= c.name %></a></li>
+          <li><a href="/ask/topics/category/<%= c.to_param %>"><%= c.name %></a></li>
           <% end %>
         </ul>
 

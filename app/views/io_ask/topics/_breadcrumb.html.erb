@@ -6,12 +6,12 @@
 
 
   <% if category %>
-    <li><a href="/ask/topics?cid=<%= category.id %>"><%= category.name %></a></li>
+    <li><a href="/ask/topics/category/<%= category.to_param %>"><%= category.name %></a></li>
   <% end %>
 
   <% if topic %>
     <% if topic.category %>
-    <li><a href="/ask/topics?cid=<%= topic.category.id %>"><%= topic.category.name %></a></li>
+    <li><a href="/ask/topics/category/<%= category.to_param %>"><%= topic.category.name %></a></li>
     <% end %>
   <% end %>
 

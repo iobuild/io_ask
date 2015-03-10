@@ -1,8 +1,6 @@
 module IoAsk
   class TopicsController < IoAsk::ApplicationController
 
-
-
     before_filter :authenticate_user!, 
               :except => [:show, :index]
 
@@ -65,6 +63,7 @@ module IoAsk
     def destroy
       return redirect_to :action => :index if @topic.destroy
     end
+
 
     private
 
