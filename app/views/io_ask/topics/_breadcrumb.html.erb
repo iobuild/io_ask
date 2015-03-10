@@ -11,7 +11,7 @@
 
   <% if topic %>
     <% if topic.category %>
-    <li><a href="/ask/topics/category/<%= category.to_param %>"><%= topic.category.name %></a></li>
+    <li><a href="/ask/topics/category/<%= topic.category.to_param %>"><%= topic.category.name %></a></li>
     <% end %>
   <% end %>
 
