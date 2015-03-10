@@ -3,7 +3,7 @@ es:
     general:
       home: Inicio
       forum: Foro
-      comment_list: Comentaria Lista
+      comment_list: Comentarios
       save: Guardar
       delete: Borrar
       confirm_delete: Borrar?
@@ -20,6 +20,10 @@ es:
       fill_content: Escribe el tema contenido
       fill_title: Escribe el tema título
       fill_category: Selecciona la categoría
+
+      fill_comment: Escribe el comentario
+      need_login: Necesitas
+      or: o
 
     topics:
       index:

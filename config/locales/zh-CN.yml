@@ -24,6 +24,10 @@ zh-CN:
       fill_title: 请填写标题
       fill_category: 选择分类
 
+      fill_comment: 填写评论内容
+      need_login: 你需要
+      or: 或
+
     topics:
       index:
         all_list: 返回返有列表

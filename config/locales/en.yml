@@ -21,6 +21,10 @@ en:
       fill_title: Input the topic title
       fill_category: Select Category
 
+      fill_comment: Input the comment
+      need_login: You need
+      or: or
+
     topics:
       index:
         all_list: All list

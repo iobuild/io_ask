@@ -87,7 +87,7 @@
                 <%= simple_form_for @topic.comments.build, :url => "/ask/topics/#{@topic.id}/comments" do |f| %>
 
                     <div class="form-group">
-                      <%= f.input :content, :required => true, as: :text, :placeholder => t('fill_content', :scope => 'io_ask.general'), :label => false, input_html: {:class => 'form-control', :rows => 12} %>
+                      <%= f.input :content, :required => true, as: :text, :placeholder => t('fill_comment', :scope => 'io_ask.general'), :label => false, input_html: {:class => 'form-control', :rows => 12} %>
                     </div>
     
                     
@@ -96,8 +96,11 @@
                       <% if user_signed_in? %>
                         <%= f.submit t('reply', :scope => 'io_ask.general'), :class => "btn btn-primary" %>
                       <% else %>
-                          <a href="/users/sign_in", class = "btn btn-primary"><%= t 'login', :scope => 'io_ask.general' %></a> 
-                           <a href="/users/sign_up", class = "btn btn-primary"><%= t 'register', :scope => 'io_ask.general' %></a>
+                        <%= t('need_login', :scope => 'io_ask.general') %>
+                          <a href="/users/sign_in"><%= t 'login', :scope => 'io_ask.general' %></a>  
+                        <%= t('or', :scope => 'io_ask.general') %>
+ 
+                           <a href="/users/sign_up"><%= t 'register', :scope => 'io_ask.general' %></a>
                       <% end %>
 
                     </div>
