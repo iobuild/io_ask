@@ -1,4 +1,4 @@
-<a class="label label-info" href="/ask/topics?cid=<%= topic.category.id %>"><%= topic.category.name %></a> •
+<a class="label label-info" href="/ask/topics/category/<%= topic.category.to_param %>"><%= topic.category.name %></a> •
 <a href="/users/<%= topic.user.ioask_name %>"><strong><%= topic.user.ioask_name %></strong></a> •
 
     
