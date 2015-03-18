@@ -46,6 +46,9 @@ module IoAsk
       @comment = IoAsk::Comment.new
 
       @comments = @topic.comments.order('id asc').page params[:page]
+
+      @title = @topic.title
+      @description = @topic.title
     end
 
 
