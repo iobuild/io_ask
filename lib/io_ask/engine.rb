@@ -22,6 +22,7 @@ require 'decorators'
 require 'bootstrap-sass'
 require 'simple_form'
 require 'font-awesome-sass'
+require 'rails_autolink'
 
 
 # We need one of the two pagination engines loaded by this point.

@@ -42,6 +42,8 @@ Gem::Specification.new do |s|
   s.add_dependency 'autoprefixer-rails'
   s.add_dependency 'coffee-rails', '~> 4.0'
   s.add_dependency 'font-awesome-sass'
+  s.add_dependency 'rails_autolink'
+
 
 
 end

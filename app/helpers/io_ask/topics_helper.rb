@@ -6,5 +6,10 @@ module IoAsk
 
       image_tag image, :alt => "#{user.ioask_name}" if image.present?
     end
+
+    def format_text(text)
+      simple_format auto_link(text, :html => { :target => '_blank' })
+    end
+
   end
 end

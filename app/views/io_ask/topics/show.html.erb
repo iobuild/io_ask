@@ -35,7 +35,7 @@
                       
 
                       <p>
-                        <%= simple_format @topic.content %>
+                        <%= format_text @topic.content %>
                       </p>
 
 
@@ -66,7 +66,7 @@
                                     <%= time_ago_in_words(c.created_at) %> <%= t 'ago', :scope => 'io_ask.general' %>
                                 </div>
                                 <div class="space"></div>
-                                <div class="reply-content"><p><%= simple_format c.content %></p></div>
+                                <div class="reply-content"><p><%= format_text c.content %></p></div>
                                 <div class="clear"></div>
                             </dd>
                             <% end %>
